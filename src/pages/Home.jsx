@@ -2,7 +2,7 @@ import MovieGrid from '../components/MovieGrid';
 import { useState, useEffect } from 'react';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
-import { getPopularMovies } from '../services/movieService';
+import { popularMovies } from '../services/movieService';
 
 function Home({ searchResults }) {
   const [movies, setMovies] = useState([]);
@@ -12,7 +12,7 @@ function Home({ searchResults }) {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const movieData = await getPopularMovies();
+        const movieData = await popularMovies();
         setMovies(movieData);
       } catch {
         setError('Failed to load movies. Please try again later.');

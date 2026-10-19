@@ -1,6 +1,6 @@
 function LoadingSpinner(){
     return (
-        <div className="loading-contaioner">
+        <div className="loading-container">
             <div className="spinner"></div>
             <p>Loading movies...</p>
         </div>

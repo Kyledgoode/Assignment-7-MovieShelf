@@ -26,7 +26,7 @@ function MovieCard({ movie }) {
     <div className="movie-card">
       <div className="movie-poster">
         <img 
-          src="https://image.tmdb.org/t/p/w500${movie.poster_path}" 
+          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
           alt={movie.title}
         />
       </div>
@@ -36,7 +36,9 @@ function MovieCard({ movie }) {
           <span className="movie-rating">⭐ {movie.vote_average}</span>
           <span className="movie-year">{movie.release_date.substring(0, 4)}</span>
         </div>
-        <button className="favorite-button" onClick={toggleFavorite}>♡ Add to Favorites</button>
+        <button className="favorite-button" onClick={toggleFavorite}>
+          {isFavorite ? 'Remove from Favorites' : '♡ Add to Favorites'}
+          </button>
       </div>
     </div>
   );

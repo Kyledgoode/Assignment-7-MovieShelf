@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Favorites from './pages/Favorites';
 import './App.css';
+import { searchMovies } from './services/movieService';
 
 function App() {
   const [searchResults, setSearchResults] = useState(null);
